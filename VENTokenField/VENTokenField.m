@@ -171,6 +171,11 @@ static const CGFloat VENTokenFieldDefaultMaxHeight          = 150.0;
 
 #pragma mark - View Layout
 
+- (CGSize)intrinsicContentSize
+{
+	return CGSizeMake([self width], MAX([self heightForToken] + self.verticalInset * 2, [self maxHeight]));
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
